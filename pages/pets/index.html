@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../assets/icons/favicon.ico" type="image/ico">
+  <link rel="stylesheet" href="../../assets/style/normalize.css">
+  <link rel="stylesheet" href="../../assets/style/style.css">
+  <title>Shelter</title>
+</head>
+<body>
+  <header class="header header-pets">
+    <div class="header__navbar container">
+      <a href="../../pages/main/index.html" class="header__logo">
+        <h1>Cozy House</h1>
+        <p>Shelter for pets in Boston</p>
+      </a>
+      <div class="header__burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="../../pages/main/index.html"> About the shelter</a></li>
+          <li class="nav__item nav__item-active"><a class="nav__link">Our pets</a></li>
+          <li class="nav__item"><a class="nav__link" href="../../pages/main/index.html#help">Help the shelter</a></li>
+          <li class="nav__item"><a class="nav__link" href="#footer">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="our-pets">
+      <div class="our-pets__content container">
+        <h2>
+          Our friends who 
+          <br>
+          are looking for a house
+        </h2>
+        <div class="our-pets__cards cards" id="pagination" >
+          
+        </div>
+        <div class="our-pets__pagination">
+          <button id="first" class="btn-circle" disabled>
+            &lt;&lt;
+          </button>
+          <button id ="prev" class="btn-circle" disabled>
+            &lt;
+          </button>
+          <button id="count" class="btn-circle active">
+            1
+          </button>
+          <button id ="next" class="btn-circle">
+            &gt;
+          </button>
+          <button id="last" class="btn-circle ">
+            &gt;&gt;
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__content container">
+      <div class="footer__contacts">
+        <h2>
+          For questions and suggestions
+        </h2>
+        <a class="footer__link" href="mailto:email@shelter.com">
+          <img src="../../assets/svg/mail.svg" alt="">
+          <h4>email@shelter.com</h4> 
+        </a>
+        <a class="footer__link" href="tel:+136745677554">
+          <img src="../../assets/svg/phone.svg" alt="">
+          <h4>+13 674 567 75 54</h4> 
+        </a>
+      </div>
+      <div class="footer__contacts contacts-adress ">
+        <h2>
+          We are waiting for your visit
+        </h2>
+        <a class="footer__link" href="https://goo.gl/maps/izVomDuymJh5tkSg8" target="_blank">
+          <img src="../../assets/svg/pin.svg" alt="">
+          <h4>1 Central Street, Boston <br> (entrance from the store)</h4>
+        </a>
+        <a class="footer__link" href="https://goo.gl/maps/Y6jfGjvCDaVvoGqV6" target="_blank">
+          <img src="../../assets/svg/pin.svg" alt="">
+          <h4>18 South Park, London</h4>
+        </a>
+      </div>
+      <div class="footer__img">
+        <img src="../../assets/images/footer-puppy.png" alt="">
+      </div>
+    </div>
+  </footer>
+  <div class="pop-up" id="pop-up">
+  </div>
+  <script type="module" src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+.header {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 100%;
+  @media only screen and (max-width: $xl) {
+    top: 13px;
+  }
+  @media only screen and (max-width: $sm) {
+    padding: 0 10px;
+  }
+  &__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__logo {
+    display: block;
+    @media only screen and (max-width: $md) {
+      margin-top: -4px;
+    }
+    h1 {
+      font-family: 'Georgia';
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      color: $color-primary;
+      user-select: none;
+      transition: color 0.7s;
+    }
+    p {
+      margin-top: -12px;
+      margin-left: 4px;
+      padding: 0;
+      font-family: 'Arial';
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 15px;
+      letter-spacing: 0.1em;
+      color: white;
+      transition: color 0.7s;
+    }
+    &:hover {
+      p {
+        transition: color 0.7s;
+        color: $color-primary;
+      }
+    }
+  }
+  .nav {
+    &__list {
+      display: flex;
+      list-style: none;
+      margin-top: 24px;
+
+      li:not(:last-child) {
+        margin-right: 36px;
+      }
+      @media only screen and (max-width: $md) {
+        margin-top: 20px;
+      }
+    }
+    &__item {
+      &::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: $color-primary;
+        opacity: 0;
+        transform-origin: left;
+        pointer-events: none;
+        transition: all 0.5s cubic-bezier(0.52, 0.01, 0.16, 1);
+        transform: scaleX(0);
+      }
+      &.nav__item-active::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      &:hover::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+    &__link {
+      font-family: 'Arial';
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 160%;
+      color: $color-dark-s;
+      transition: color 0.7s;
+      &:hover {
+        color: white;
+      }
+    }
+    &__item-active {
+      pointer-events: none;
+      @media only screen and (max-width: 750px) {
+        pointer-events: all;
+      }
+      a {
+        color: white;
+      }
+    }
+    @media only screen and (max-width: 750px) {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      height: 100vh;
+      width: 320px;
+      background: $color-dark-3xl;
+      transition: right 0.7s cubic-bezier(0.52, 0.01, 0.16, 1),
+        box-shadow 0.5s ease;
+      z-index: 10;
+      &.open {
+        right: 0px;
+        box-shadow: 0 0 0 9999px rgba(41, 41, 41, 0.6);
+      }
+      &__list {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-39%);
+        li:not(:last-child) {
+          margin-right: 0px;
+        }
+      }
+      &__item {
+        margin-bottom: 38px;
+      }
+      &__link {
+        font-size: 32px;
+      }
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    &__burger {
+      position: relative;
+      display: grid;
+      align-content: space-around;
+      margin-top: 4px;
+      height: 31px;
+      width: 29px;
+      cursor: pointer;
+      z-index: 15;
+      transition: all 0.6s;
+      &.open {
+        transform: rotate(90deg);
+      }
+      span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $color-primary;
+      }
+    }
+  }
+}
+// page out pets
+.header-pets {
+  background: white;
+  .header__logo {
+    h1 {
+      color: $color-dark-l;
+    }
+    p {
+      color: $color-dark-l;
+    }
+
+    &:hover {
+      h1 {
+        color: $color-dark-3xl;
+      }
+      p {
+        color: $color-dark-3xl;
+      }
+    }
+  }
+  .nav__link {
+    color: $color-dark-l;
+    &:hover {
+      color: $color-dark-3xl;
+    }
+  }
+  .nav__item-active {
+    a {
+      color: $color-dark-3xl;
+    }
+  }
+  .nav {
+    background: white;
+  }
+  .header__burger {
+    span {
+      background: black;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.pop-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: -1;
+  transition: all 0.8s;
+  &.pop-up-open {
+    opacity: 1;
+    z-index: 999;
+  }
+
+  &__container {
+    position: relative;
+    background: $color-light-s;
+    border-radius: 9px;
+    margin-top: 45px;
+    animation: myAnimPopup 0.8s ease;
+    .btn-circle {
+      position: absolute;
+      top: -52px;
+      right: -42px;
+      background: transparent;
+      @media only screen and (max-width: 736px) {
+        top: -52px;
+        right: -27px;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    min-height: 500px;
+    @media only screen and (max-width: $xxl) {
+      width: 630px;
+      min-height: 350px;
+    }
+    @media only screen and (max-width: 736px) {
+      width: 240px;
+      min-height: 340px;
+    }
+    .pop-up__img {
+      width: 500px;
+      @media only screen and (max-width: $xxl) {
+        width: 350px;
+      }
+      @media only screen and (max-width: 736px) {
+        display: none;
+      }
+      img {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 9px 0 0 9px;
+        object-fit: cover;
+        @media only screen and (max-width: $xxl) {
+        }
+      }
+    }
+    .pop-up__info {
+      max-width: 380px;
+      padding: 40px 17px 90px 9px;
+      @media only screen and (max-width: $xxl) {
+        width: 270px;
+        padding: 0px 5px 10px 0px;
+      }
+      @media only screen and (max-width: 736px) {
+        padding: 0px 9px 10px;
+      }
+    }
+  }
+  .info {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    &__title {
+      margin: 10px 0 0 0;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      @media only screen and (max-width: 736px) {
+        text-align: center;
+      }
+      color: #000000;
+    }
+    &__subtitle {
+      margin: 8px 0 42px 0;
+      font-size: 20px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      color: #000000;
+      @media only screen and (max-width: $xxl) {
+        margin: 8px 0 20px 0;
+      }
+      @media only screen and (max-width: 736px) {
+        text-align: center;
+        margin: 8px 0 21px 0;
+      }
+    }
+    &__text {
+      padding: 0;
+      font-family: 'Georgia';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      color: #000000;
+      @media only screen and (max-width: $xxl) {
+        font-size: 13px;
+        line-height: 110%;
+      }
+      @media only screen and (max-width: 736px) {
+        text-align: justify;
+        line-height: 109%;
+      }
+    }
+    &__list {
+      line-height: 110%;
+      color: $color-primary;
+      margin: 38px 0 0px;
+      padding-left: 14px;
+      & li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      @media only screen and (max-width: $xxl) {
+        margin: 20px 0 0px;
+        & li:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+      @media only screen and (max-width: 736px) {
+        margin: 24px 0 0px;
+      }
+    }
+    .list-item {
+      &__value {
+        color: #000000;
+      }
+    }
+    .list-item__title {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 110%;
+      color: #000000;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+@keyframes myAnimPopup {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,114 @@
+.our-pets {
+  background: $color-light-l;
+  padding: 52px 0 67px;
+  margin-top: 120px;
+  @media only screen and (max-width: $xl) {
+    padding: 52px 0 43px;
+  }
+  @media only screen and (max-width: $sm) {
+    padding: 22px 0 10px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      text-align: center;
+    }
+  }
+  &__cards {
+    margin: 29px 0 26px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: center;
+    grid-gap: 30px 3.33%;
+
+    @keyframes move-hide-left {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-30%);
+        opacity: 0;
+      }
+    }
+
+    &.hide-left {
+      animation-name: move-hide-left;
+      animation-duration: 0.5s;
+    }
+    @keyframes move-hide-right {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(30%);
+        opacity: 0;
+      }
+    }
+
+    &.hide-right {
+      animation-name: move-hide-right;
+      animation-duration: 0.5s;
+    }
+
+    @keyframes move-show-left {
+      0% {
+        transform: translateX(30%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    &.show-left {
+      animation-name: move-show-left;
+      animation-duration: 0.3s;
+    }
+    @keyframes move-show-right {
+      0% {
+        transform: translateX(-30%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    &.show-right {
+      animation-name: move-show-right;
+      animation-duration: 0.3s;
+    }
+
+    @media only screen and (max-width: $xxl) {
+      // max-height: 1365px;
+      // overflow: hidden;
+    }
+    @media only screen and (max-width: $xl) {
+      margin: 0px 0 6px;
+    }
+    @media only screen and (max-width: $md) {
+      grid-gap: 30px 5.9%;
+    }
+    @media only screen and (max-width: $sm) {
+      margin: 19px 0 9px;
+    }
+  }
+  &__pagination {
+    margin: 33px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    .btn-circle.active {
+      pointer-events: none;
+    }
+    @media only screen and (max-width: $sm) {
+      width: 300px;
+    }
+  }
+}
